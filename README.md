@@ -7,7 +7,7 @@ Checkout this repo, install dependencies, then start the process with the follow
 
 ```
 > git clone https://github.com/savalazic/youtube-app.git
-> cd ReduxSimpleStarter
+> cd youtube-app
 > yarn
 > yarn start
 ```
