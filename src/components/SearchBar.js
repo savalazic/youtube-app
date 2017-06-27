@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import styled, { injectGlobal, keyframes, ThemeProvider } from 'styled-components';
 
 class SearchBar extends Component {
 
@@ -15,14 +16,15 @@ class SearchBar extends Component {
   }
 
   render() {
+
     return (
-      <form>
+      <div>
         <input 
           type='text'
+          placeholder='Search...'
           value={this.state.term}
           onChange={e => this.onInputChange(e.target.value)} />
-        <p>{this.state.search}</p>
-      </form>
+      </div>
     );
   }
 }
