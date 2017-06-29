@@ -25,6 +25,22 @@ class App extends Component {
     this.videoSearch('arapske pare');
   }
 
+  componentDidMount() {
+    // Get the components DOM node
+    var elem = ReactDOM.findDOMNode(this);
+    // Set the opacity of the element to 0
+    elem.style.opacity = 0;
+    elem.style.transform = 'translateY(50px)';
+    window.requestAnimationFrame(function() {
+      // Now set a transition on the opacity
+      elem.style.transition = 'opacity 3000ms, transform 3000ms';
+      // and set the opacity to 1
+      elem.style.opacity = 1;
+      elem.style.transform = 'translateY(0)';
+    });
+  }
+  
+
   videoSearch(term) {
     YTSearch({ key: API_KEY, term: term }, (videos) => {
       this.setState({ 
@@ -37,7 +53,7 @@ class App extends Component {
   render() {
 
     const theme = {
-      bg: '#000',
+      bg: '#fff',
       fg: 'white'
     };
 
